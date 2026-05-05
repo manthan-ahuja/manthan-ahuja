@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { AnimatedSection } from '@/components/AnimatedSection';
 import { ServiceCard } from '@/components/ServiceCard';
 import { SectionHeader } from '@/components/SectionHeader';
 
@@ -9,11 +13,13 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="space-y-12">
-      <SectionHeader eyebrow="Services" title="Connected capabilities. One defense network." copy="Each service is a node in your command architecture, designed to interoperate and evolve." />
-      <section className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service) => <ServiceCard key={service.title} {...service} />)}
-      </section>
-    </div>
+    <AnimatedSection>
+      <div className="space-y-12">
+        <SectionHeader eyebrow="Services" title="Connected capabilities. One defense network." copy="Each service is a node in your command architecture, designed to interoperate and evolve." />
+        <motion.section layout className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => <ServiceCard key={service.title} {...service} />)}
+        </motion.section>
+      </div>
+    </AnimatedSection>
   );
 }
