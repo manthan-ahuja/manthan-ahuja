@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-cloud text-ink antialiased;
+}
+
+.grid-scan {
+  background-image: linear-gradient(rgba(51,65,85,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51,65,85,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.tech-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14,165,233,.35), transparent);
+}
